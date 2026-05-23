@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Supabase Auth",
+    "url": "https://geabzgcxqguzpgsmgfyi.supabase.co/auth/v1/health",
+    "icon": "https://icons.duckduckgo.com/ip3/geabzgcxqguzpgsmgfyi.supabase.co.ico",
+    "slug": "supabase-auth",
+    "status": "down",
+    "uptime": "75.38%",
+    "uptimeDay": "75.38%",
+    "uptimeWeek": "75.38%",
+    "uptimeMonth": "75.38%",
+    "uptimeYear": "75.38%",
+    "time": 102,
+    "timeDay": 102,
+    "timeWeek": 102,
+    "timeMonth": 102,
+    "timeYear": 102,
+    "dailyMinutesDown": {
+      "2026-05-23": 0
+    }
+  },
+  {
+    "name": "Sparkle Stable Appcast",
+    "url": "https://updates.lowpass.dev/appcast.xml",
+    "icon": "https://icons.duckduckgo.com/ip3/updates.lowpass.dev.ico",
+    "slug": "sparkle-stable-appcast",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 490,
+    "timeDay": 490,
+    "timeWeek": 490,
+    "timeMonth": 490,
+    "timeYear": 490,
+    "dailyMinutesDown": {}
+  },
+  {
+    "name": "Sparkle Beta Appcast",
+    "url": "https://updates.lowpass.dev/appcast-beta.xml",
+    "icon": "https://icons.duckduckgo.com/ip3/updates.lowpass.dev.ico",
+    "slug": "sparkle-beta-appcast",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 401,
+    "timeDay": 401,
+    "timeWeek": 401,
+    "timeMonth": 401,
+    "timeYear": 401,
+    "dailyMinutesDown": {}
+  }
+]
