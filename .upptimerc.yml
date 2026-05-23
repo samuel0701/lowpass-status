@@ -1,31 +1,40 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: samuel0701
+repo: lowpass-status
 
+# Endpoints probed every 5 minutes by `.github/workflows/uptime.yml`.
+# Each one is the canonical health signal for one external dependency of
+# the StageMap macOS app — see `.claude/plans/tier-3-marketing-visibility.md`
+# (Phase 2 / F4) for the reasoning behind each pick.
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
+  - name: Supabase Auth
+    url: https://geabzgcxqguzpgsmgfyi.supabase.co/auth/v1/health
+    # Returns `{"name":"GoTrue","version":"…","description":"GoTrue is …"}`
+    # when healthy. No auth required; the endpoint is intentionally public
+    # so monitors and load-balancer probes can reach it.
+  - name: Sparkle Stable Appcast
+    url: https://updates.lowpass.dev/appcast.xml
+    # The R2-backed Sparkle feed every shipped client checks on startup.
+    # 404 here = stable users cannot receive updates.
+  - name: Sparkle Beta Appcast
+    url: https://updates.lowpass.dev/appcast-beta.xml
+    # Beta channel feed. 404 here = beta testers stop receiving updates.
+  # Add once J2 (marketing site) lands:
+  # - name: lowpass.dev
+  #   url: https://lowpass.dev
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
+  cname: status.lowpass.dev
   logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  name: lowpass.dev Status
+  introTitle: "**lowpass.dev Status** — uptime + recent incidents for StageMap's external dependencies."
+  introMessage: "Probes run every 5 minutes from GitHub Actions. Source + history at the [lowpass-status repository](https://github.com/samuel0701/lowpass-status)."
   navbar:
     - title: Status
       href: /
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Upptime supports notifications (Slack, Discord, Telegram, email), assigning
+# issues to people, and SLA computation. Defer the notification side until
+# the first false-positive incident motivates the work — see
+# https://upptime.js.org/docs/configuration
